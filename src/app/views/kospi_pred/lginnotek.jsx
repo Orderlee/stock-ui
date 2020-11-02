@@ -95,8 +95,8 @@ const Spacing = () => {
       <div className="mb-sm-30">
         <Breadcrumb
           routeSegments={[
-            { name: "Utilities", path: "/utilities" },
-            { name: "Spacing" }
+            { name: "kospi_pred", path: "/kospi_pred" },
+            { name: "LG Innotek" }
           ]}
         />
       </div>

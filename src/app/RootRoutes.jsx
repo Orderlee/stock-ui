@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 
 import dashboardRoutes from "./views/dashboard/DashboardRoutes";
 import kospiRoutes from "./views/kospi/KospiRoutes";
-import utilitiesRoutes from "./views/utilities/UtilitiesRoutes";
+import kospipredRoutes from "./views/kospi_pred/kospipredRoutes";
 import sessionRoutes from "./views/sessions/SessionRoutes";
 
 import materialRoutes from "./views/material-kit/MaterialRoutes";
@@ -30,7 +30,8 @@ const routes = [
   ...sessionRoutes,
   ...dashboardRoutes,
   ...materialRoutes,
-  ...utilitiesRoutes,
+  ...kospiRoutes,
+  ...kospipredRoutes,
   ...dragAndDropRoute,
   ...formsRoutes,
   ...mapRoutes,

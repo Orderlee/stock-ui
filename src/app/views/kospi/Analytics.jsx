@@ -12,7 +12,7 @@
 // import Campaigns from "./shared/Campaigns";
 // import { withStyles } from "@material-ui/styles";
 
-// class Dashboard1 extends Component {
+// class Dashboard2 extends Component {
 //   state = {};
 
 //   render() {
@@ -92,10 +92,8 @@
 //   }
 // }
 
-// export default withStyles({}, { withTheme: true })(Dashboard1);
+// export default withStyles({}, { withTheme: true })(Dashboard2);
 
-
-/* App.js */
 import { withStyles } from "@material-ui/styles";
 import React, { Component } from "react";
 import CanvasJSReact from './canvasjs.stock.react';
