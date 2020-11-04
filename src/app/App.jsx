@@ -1,6 +1,8 @@
 import "../fake-db";
 import "../styles/_app.scss";
 /* eslint-disable react-hooks/exhaustive-deps */
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import ReduxThunk from 'redux-thunk'
 import React from "react";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";

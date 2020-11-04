@@ -2,7 +2,6 @@
 import { withStyles } from "@material-ui/styles";
 import React, { Component } from "react";
 import CanvasJSReact from './canvasjs.stock.react';
-import ReactEcharts from "echarts-for-react";
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
  
@@ -15,7 +14,7 @@ class lginnotek extends Component {
   componentDidMount() {
     //Reference: https://reactjs.org/docs/faq-ajax.html#example-using-ajax-results-to-set-local-state
     // fetch("https://canvasjs.com/data/docs/ltcusd2018.json")
-	  fetch(`http://localhost:8080/kospi/lginnotek`)
+    fetch(`http://localhost:8080/kospi/lginnotek`)
       .then(res => res.json())
       .then(
         (data) => {
@@ -28,7 +27,6 @@ class lginnotek extends Component {
                 Number(data[i].high),
                 Number(data[i].low),
                 Number(data[i].close)
-
               ]
             });
             dps2.push({x: new Date(data[i].date), y: Number(data[i].volume)});
@@ -46,7 +44,7 @@ class lginnotek extends Component {
  
   render() {
     const options = {
-      theme: "dark2",
+      theme: "light2",
       title:{
         text:"LG Innotek Co.,Ltd.(011070.KS)"
       },
@@ -78,8 +76,10 @@ class lginnotek extends Component {
         },
         data: [{
           name: "Price (in KRW)",
-          yValueFormatString: "#,###.##₩",
+          yValueFormatString: "#,###.## ₩",
           type: "candlestick",
+          risingColor: "red",
+          fallingColor: "blue",
           dataPoints : this.state.dataPoints1
         }]
       },{
@@ -92,7 +92,7 @@ class lginnotek extends Component {
         },
         axisY: {
           title: "Volume",
-          prefix: "$",
+          prefix: "₩",
           tickLength: 0
         },
         toolTip: {
@@ -100,9 +100,9 @@ class lginnotek extends Component {
         },
         data: [{
           name: "Volume",
-          yValueFormatString: "#,###.##₩",
+          yValueFormatString: "#,###.## ₩",
           type: "column",
-          dataPoints : this.state.dataPoints2
+          dataPoints : this.state.dataPoints1
         }]
       }],
       navigator: {
@@ -110,8 +110,8 @@ class lginnotek extends Component {
           dataPoints: this.state.dataPoints3
         }],
         slider: {
-          minimum: new Date("2010-06-29"),
-          maximum: new Date("2020-10-28")
+          minimum: new Date("2017-01-01"),
+          maximum: new Date("2020-12-31")
         }
       }
     };
@@ -135,6 +135,8 @@ class lginnotek extends Component {
     );
   }
 }
- 
-export default withStyles({}, { withTheme: true })(lginnotek);
+export default withStyles({}, { withTheme: true })(lginnotek); 
+
+
+
 

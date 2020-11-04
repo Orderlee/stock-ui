@@ -2,12 +2,12 @@ import React from "react";
 
 const kospipredRoutes = [
   {
-    path: "/kospi_pred/lgchem",
-    component: React.lazy(() => import("./lgchem"))
+    path: "/kospi_pred/Lgchem_pred",
+    component: React.lazy(() => import("./Lgchem_pred"))
   },
   {
-    path: "/kospi_pred/lginnotek",
-    component: React.lazy(() => import("./lginnotek"))
+    path: "/kospi_pred/Lginnotek_pred",
+    component: React.lazy(() => import("./Lginnotek_pred"))
   },
 ];
 

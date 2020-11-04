@@ -1,21 +1,23 @@
 import { withStyles } from "@material-ui/styles";
 import React, { Component } from "react";
 import CanvasJSReact from './canvasjs.stock.react';
-import ReactEcharts from "echarts-for-react";
-
+import {axios} from 'axios'
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSStockChart = CanvasJSReact.CanvasJSStockChart;
+
  
 class lgchem extends Component {
   constructor(props) {
     super(props);
     this.state = { dataPoints1: [], dataPoints2: [], dataPoints3: [], isLoaded: false };
   }
+
+  
  
   componentDidMount() {
     //Reference: https://reactjs.org/docs/faq-ajax.html#example-using-ajax-results-to-set-local-state
     // fetch("https://canvasjs.com/data/docs/ltcusd2018.json")
-	  fetch(`http://localhost:8080/kospi/lgchem`)
+        fetch(`http://localhost:8080/kospi/lgchem`)
       .then(res => res.json())
       .then(
         (data) => {
@@ -28,7 +30,6 @@ class lgchem extends Component {
                 Number(data[i].high),
                 Number(data[i].low),
                 Number(data[i].close)
-
               ]
             });
             dps2.push({x: new Date(data[i].date), y: Number(data[i].volume)});
@@ -46,7 +47,7 @@ class lgchem extends Component {
  
   render() {
     const options = {
-      theme: "dark2",
+      theme: "light2",
       title:{
         text:"LG chem, Ltd.(051910.KS)"
       },
@@ -78,8 +79,10 @@ class lgchem extends Component {
         },
         data: [{
           name: "Price (in KRW)",
-          yValueFormatString: "#,###.##₩",
+          yValueFormatString: "#,###.## ₩",
           type: "candlestick",
+          risingColor: "red",
+          fallingColor: "blue",
           dataPoints : this.state.dataPoints1
         }]
       },{
@@ -100,7 +103,7 @@ class lgchem extends Component {
         },
         data: [{
           name: "Volume",
-          yValueFormatString: "#,###.##₩",
+          yValueFormatString: "#,###.## ₩",
           type: "column",
           dataPoints : this.state.dataPoints2
         }]
@@ -110,8 +113,8 @@ class lgchem extends Component {
           dataPoints: this.state.dataPoints3
         }],
         slider: {
-          minimum: new Date("2000-01-01"),
-          maximum: new Date("2020-10-28")
+          minimum: new Date("2017-01-01"),
+          maximum: new Date("2020-12-31")
         }
       }
     };
@@ -132,8 +135,11 @@ class lgchem extends Component {
           }
         </div>
       </div>
+      
     );
+
+    
+    
   }
 }
- 
-export default withStyles({}, { withTheme: true })(lgchem);
+export default withStyles({}, { withTheme: true }) (lgchem); 

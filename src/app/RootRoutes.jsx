@@ -1,9 +1,10 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 
+import homeRoutes from "./views/home/HomeRoutes"
 import dashboardRoutes from "./views/dashboard/DashboardRoutes";
 import kospiRoutes from "./views/kospi/KospiRoutes";
-import kospipredRoutes from "./views/kospi_pred/kospipredRoutes";
+import kospipredRoutes from "./views/kospi_pred/KospipredRoutes";
 import sessionRoutes from "./views/sessions/SessionRoutes";
 
 import materialRoutes from "./views/material-kit/MaterialRoutes";
@@ -29,6 +30,7 @@ const errorRoute = [
 const routes = [
   ...sessionRoutes,
   ...dashboardRoutes,
+  ...homeRoutes,
   ...materialRoutes,
   ...kospiRoutes,
   ...kospipredRoutes,
@@ -37,7 +39,6 @@ const routes = [
   ...mapRoutes,
   ...redirectRoute,
   ...errorRoute,
-  ...kospiRoutes
 ];
 
 export default routes;

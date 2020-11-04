@@ -4,6 +4,7 @@ import { Grid } from "@material-ui/core";
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
+
 const clickbutton = e => {
     axios.get(`http://localhost:8080/kospi/lgchem_pred`)
     .then(

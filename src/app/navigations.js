@@ -14,11 +14,11 @@ export const navigations = [
       icon: "multiline_chart",
       children:[
         {name: "LG Chem",
-         path: "/kospi/lgchem",
+         path: "/kospi/Lgchem",
          icon:"battery_charging_full"},
          
          {name: "LG Innotek",
-          path: "/kospi/lginnotek",
+          path: "/kospi/Lginnotek",
           icon:"camera"
         }
       ]
@@ -30,14 +30,14 @@ export const navigations = [
       children: [
         {
           name: "LG Chem",
-          path: "/kospi_pred/lgchem",
+          path: "/kospi_pred/Lgchem_pred",
           icon:"battery_charging_full",
           iconText: "C"
         },
         {
           name: "LG Innotek",
           icon:"camera",
-          path: "/kospi_pred/lginnotek",
+          path: "/kospi_pred/Lginnotek_pred",
           iconText: "S"
         }
 

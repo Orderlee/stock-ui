@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 export default function Home(props){
     const test = () => {
-        axios.get('http://localhost:8080/kospi/lgchem')
+        axios.get('http://localhost:8080/kospi')
         .then(res => {
             alert('Connection Success!')
         }).catch(
