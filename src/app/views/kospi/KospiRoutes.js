@@ -2,22 +2,22 @@ import React from "react";
 import { MatxLoadable } from "matx";
 import { authRoles } from "../../auth/authRoles";
 
-const lgchem = MatxLoadable({
+const Lgchem = MatxLoadable({
   loader: () => import("./Lgchem")
 })
-const lginnotek = MatxLoadable({
+const Lginnotek = MatxLoadable({
   loader: () => import("./Lginnotek")
 })
 
 const kospiRoutes = [
   {
     path: "/kospi/lgchem",
-    component: lgchem,
+    component: Lgchem,
     auth: authRoles.admin
   },
   {
     path:"/kospi/lginnotek",
-    component: lginnotek,
+    component: Lginnotek,
     auth: authRoles.admin
   }
 ];
